@@ -3,6 +3,7 @@ import cors from "cors"
 import { comprobar_conexiondb } from "./database/connection.js"
 import usuariosRouter from "./routes/usuarios.routes.js"
 import tareasRouter from "./routes/tareas.routes.js"
+import { PORT } from "./config.js"
 
 let app = express ()
 
@@ -15,4 +16,4 @@ app.use (tareasRouter)
 
 comprobar_conexiondb ()
 
-export default app;
+app.listen (3000, ()=> console.log ("Servidor inicializado en el puerto "+PORT))
