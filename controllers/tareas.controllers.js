@@ -5,7 +5,7 @@ export let mostrar_tareas_usuario = async (req, res) => {
     const { emailU } = req.params;
 
     try {
-        const query_tareasU = "SELECT * FROM tareas t INNER JOIN cuentas c ON t.ID_Cuenta_Asociada = c.ID_Cuenta WHERE c.Email_Usuario = ?";
+        const query_tareasU = "SELECT * FROM Tareas t INNER JOIN cuentas c ON t.ID_Cuenta_Asociada = c.ID_Cuenta WHERE c.Email_Usuario = ?";
         let [data] = await connectiondb.query(query_tareasU, [emailU]);
 
         console.log("Estas son las tareas del usuario " + emailU + ": " + JSON.stringify(data));

@@ -61,7 +61,7 @@ export let login_usuario = async (req, res) => {
     const campos_verificar_usuario = [email, contrasenia]
 
     try {
-        const query_verificar_existencia_usuario = `SELECT ID_Cuenta FROM cuentas WHERE Email_Usuario = ? AND Contrasenia_Usuario = ?`
+        const query_verificar_existencia_usuario = `SELECT ID_Cuenta FROM Cuentas WHERE Email_Usuario = ? AND Contrasenia_Usuario = ?`
 
         const [data] = await connectiondb.query(query_verificar_existencia_usuario, campos_verificar_usuario);
 
