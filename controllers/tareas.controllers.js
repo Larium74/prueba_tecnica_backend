@@ -89,3 +89,12 @@ export let agregar_tarea = async (req, res) => {
         res.status(500).send("Error al agregar la tarea");
     }
 };
+
+
+export let test = (req, res) => {
+    console.log ("Accediedno a la ruta /test")
+    res.status (200).json ({
+        mensaje: "Esta es una ruta de prueba",
+        state: "successlly"
+    })
+}
